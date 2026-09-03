@@ -10,13 +10,12 @@ on:
         required: true
         default: '0.21.1'
       upstream_tag:
-        description: 'Upstream git ref (e.g. open-design-v0.21.1). Empty = main.'
-        required: false
-        default: ''
-
 jobs:
   build:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
         with:
